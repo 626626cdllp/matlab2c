@@ -258,7 +258,12 @@ public:
 				{
 					date_temp[i]= begindata+jiangedata*i;
 				}
-				return Matrix(1,num,date_temp);    //分析增量矩阵，返回成行向量，按道理也可以返回成列矩阵
+				
+				Matrix r(1,num,date_temp);
+				delete [] date_temp;
+				date_temp = 0;
+				
+				return r;    //分析增量矩阵，返回成行向量，按道理也可以返回成列矩阵
 			}
 			if (strarr3.size()==2)//如果包含首元素，尾元素，默认步长为1
 			{
@@ -269,7 +274,12 @@ public:
 				{
 					date_temp[i]= begindata+i;
 				}
-				return Matrix(1,num,date_temp);    //分析增量矩阵，返回成行向量，按道理也可以返回成列矩阵
+				
+				Matrix r(1,num,date_temp);
+				delete [] date_temp;
+				date_temp = 0;
+				
+				return r;    //分析增量矩阵，返回成行向量，按道理也可以返回成列矩阵
 			}
 		}else
 		{
